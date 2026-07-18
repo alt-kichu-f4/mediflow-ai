@@ -1,18 +1,15 @@
-PATIENTS = {
-    "P001": {
-        "name": "John Smith",
-        "age": 45,
-        "diagnosis": "Lower Back Pain",
-        "therapy_weeks": 8,
-        "insurance": "Blue Shield"
-    }
-}
+import json
+from pathlib import Path
 
-def get_patient_history(patient_id: str):
-    """
-    Returns patient history based on patient ID.
-    """
-    return PATIENTS.get(
-        patient_id,
-        {"error": "Patient not found"}
-    )
+DATA = Path(__file__).parent.parent / "data" / "patients.json"
+
+
+def get_patient_history(patient_id):
+    with open(DATA, "r") as f:
+        patients = json.load(f)
+
+    for patient in patients:
+        if patient["patient_id"] == patient_id:
+            return patient
+
+    return {"error": "Patient not found"}

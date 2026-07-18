@@ -1,15 +1,20 @@
-POLICIES = {
-    "Blue Shield": {
-        "requires_physical_therapy": True,
-        "minimum_weeks": 6,
-        "requires_specialist": True
-    }
-}
+import json
+from pathlib import Path
 
-def get_policy(name: str):
-    policy = POLICIES.get(name)
+DATA = Path(__file__).parent.parent / "data" / "insurance_policies.json"
 
-    if policy is None:
-        return {"error": "Policy not found"}
 
-    return policy
+def get_policy(provider, procedure):
+
+    with open(DATA, "r") as f:
+        policies = json.load(f)
+
+    for policy in policies:
+        if (
+            policy["provider"] == provider
+            and
+            policy["procedure"] == procedure
+        ):
+            return policy
+
+    return None
