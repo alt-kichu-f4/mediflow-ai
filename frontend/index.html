@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediFlow AI — Prior Authorization Platform</title>
+    <!-- Tailwind CSS Engine for Premium Look & Feel -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons Development Script -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .serif-doc { font-family: 'Newsreader', serif; }
+        /* Hide all pages by default except the active one */
+        .page-view { display: none; }
+        .page-view.active { display: flex; flex-direction: column; }
+        .skeleton { animation: pulse 1.4s ease-in-out infinite; }
+        @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .45; } }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased min-h-screen">
+
+    <!-- ========================================================================= -->
+    <!-- VIEW 1: LANDING PAGE -->
+    <!-- ========================================================================= -->
+    <div id="view-landing" class="page-view active min-h-screen">
+        <!-- Top Navigation -->
+        <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-lg shadow-sm">M</div>
+                <span class="text-xl font-bold tracking-tight text-slate-900">MediFlow <span class="text-blue-600">AI</span></span>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
+                <a href="#features" class="hover:text-blue-600 transition">System Architecture</a>
+                <a href="#pipeline" class="hover:text-blue-600 transition">Audit Pipeline</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <button onclick="navigateTo('view-login')" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition">Sign In</button>
+                <button onclick="navigateTo('view-login')" class="bg-blue-600 text-white text-sm font-medium px-4 py-2 rounded-xl hover:bg-blue-700 transition shadow-sm">Get Started</button>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="max-w-7xl mx-auto px-6 pt-20 pb-16 text-center flex-1">
+            <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 max-w-4xl mx-auto leading-tight">
+                MediFlow AI
+            </h1>
+            <p class="mt-4 text-lg md:text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed">
+                AI-Powered Prior Authorization, Simplified. Automate compliance clause matching, identify missing clinical files proactively, and maintain complete system auditability.
+            </p>
+            <div class="mt-10 flex justify-center space-x-4">
+                <button onclick="navigateTo('view-login')" class="bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition flex items-center space-x-2 shadow-md">
+                    <span>Get Started</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+            </div>
+
+            <!-- Wireframe Mockup UI -->
+            <div class="mt-16 border border-slate-200 rounded-2xl bg-white shadow-2xl p-4 max-w-4xl mx-auto overflow-hidden text-left">
+                <div class="bg-slate-950 rounded-xl p-3 text-xs font-mono text-slate-400 flex items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-3 h-3 rounded-full bg-rose-500"></span>
+                        <span class="w-3 h-3 rounded-full bg-amber-500"></span>
+                        <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                        <span class="ml-4 text-slate-500">Authorization Module Platform v2.4</span>
+                    </div>
+                    <span class="text-emerald-400 font-bold">● Active Audit Stream</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 h-44">
+                    <div class="border border-slate-200 rounded-xl p-4 bg-slate-50">
+                        <p class="font-bold text-slate-700 text-xs uppercase tracking-wider">Patient History Profile</p>
+                        <div class="mt-3 space-y-2">
+                            <div class="h-3 bg-slate-200 rounded w-3/4"></div>
+                            <div class="h-3 bg-slate-200 rounded w-1/2"></div>
+                            <div class="h-3 bg-slate-200 rounded w-5/6"></div>
+                        </div>
+                    </div>
+                    <div class="border border-slate-200 rounded-xl p-4 bg-slate-50">
+                        <p class="font-bold text-slate-700 text-xs uppercase tracking-wider">Rule Checkpoints</p>
+                        <div class="mt-3 space-y-2">
+                            <div class="flex items-center space-x-2"><span class="w-2 h-2 rounded-full bg-emerald-500"></span><div class="h-2 bg-slate-200 rounded w-2/3"></div></div>
+                            <div class="flex items-center space-x-2"><span class="w-2 h-2 rounded-full bg-emerald-500"></span><div class="h-2 bg-slate-200 rounded w-1/2"></div></div>
+                            <div class="flex items-center space-x-2"><span class="w-2 h-2 rounded-full bg-amber-500"></span><div class="h-2 bg-slate-200 rounded w-3/4"></div></div>
+                        </div>
+                    </div>
+                    <div class="border border-emerald-200 bg-emerald-50/40 rounded-xl p-4 flex flex-col justify-between">
+                        <div>
+                            <p class="font-bold text-emerald-800 text-xs uppercase tracking-wider flex items-center gap-1">
+                                <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i> Platform Approval Metric
+                            </p>
+                            <p class="text-4xl font-extrabold text-emerald-600 mt-2">94.2%</p>
+                        </div>
+                        <p class="text-[11px] text-emerald-700">Perfect alignment with payer rules.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Feature Grid Section -->
+        <section id="features" class="max-w-7xl mx-auto px-6 py-20 border-t border-slate-200 bg-white">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Enterprise Infrastructure Matrix</h2>
+                <p class="mt-3 text-slate-500 text-sm">Every capability is built specifically for secure, clinical-grade operating environments.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="border border-slate-200 rounded-xl p-5 hover:shadow-md transition">
+                    <div class="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mb-4"><i data-lucide="users" class="w-5 h-5"></i></div>
+                    <h3 class="font-bold text-slate-900 text-sm">Patient Intelligence</h3>
+                    <p class="text-xs text-slate-500 mt-2 leading-relaxed">Aggregates longitudinal clinical documentation dynamically across disparate EMR channels.</p>
+                </div>
+                <div class="border border-slate-200 rounded-xl p-5 hover:shadow-md transition">
+                    <div class="w-10 h-10 rounded-lg bg-teal-50 text-teal-600 flex items-center justify-center mb-4"><i data-lucide="file-text" class="w-5 h-5"></i></div>
+                    <h3 class="font-bold text-slate-900 text-sm">Policy Understanding</h3>
+                    <p class="text-xs text-slate-500 mt-2 leading-relaxed">Parses structured and unstructured institutional guidelines with native context understanding.</p>
+                </div>
+                <div class="border border-slate-200 rounded-xl p-5 hover:shadow-md transition">
+                    <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center mb-4"><i data-lucide="alert-circle" class="w-5 h-5"></i></div>
+                    <h3 class="font-bold text-slate-900 text-sm">Missing Doc Detection</h3>
+                    <p class="text-xs text-slate-500 mt-2 leading-relaxed">Flag missing conservative therapies or image diagnostic items prior to submission.</p>
+                </div>
+                <div class="border border-slate-200 rounded-xl p-5 hover:shadow-md transition">
+                    <div class="w-10 h-10 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center mb-4"><i data-lucide="cpu" class="w-5 h-5"></i></div>
+                    <h3 class="font-bold text-slate-900 text-sm">Provider Agent</h3>
+                    <p class="text-xs text-slate-500 mt-2 leading-relaxed">Manages intake workloads natively without disturbing standard internal clinical tools.</p>
+                </div>
+                <div class="border border-slate-200 rounded-xl p-5 hover:shadow-md transition">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4"><i data-lucide="pen-tool" class="w-5 h-5"></i></div>
+                    <h3 class="font-bold text-slate-900 text-sm">Appeal Letter Gen</h3>
+                    <p class="text-xs text-slate-500 mt-2 leading-relaxed">Compiles rich context letters complete with structural inline EHR matching codes.</p>
+                </div>
+                <div class="border border-slate-200 rounded-xl p-5 hover:shadow-md transition">
+                    <div class="w-10 h-10 rounded-lg bg-sky-50 text-sky-600 flex items-center justify-center mb-4"><i data-lucide="refresh-cw" class="w-5 h-5"></i></div>
+                    <h3 class="font-bold text-slate-900 text-sm">Real-Time Tracking</h3>
+                    <p class="text-xs text-slate-500 mt-2 leading-relaxed">Tracks diagnostic requests through deep transactional status logging pipelines.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chevron Pipeline Tracking -->
+        <section id="pipeline" class="bg-slate-900 text-white py-16 px-6">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-2xl font-bold text-center mb-10 tracking-tight"> Automated Audit Chevron Pipeline</h2>
+                <div class="flex flex-wrap lg:flex-nowrap items-center justify-center border border-slate-800 rounded-xl bg-slate-950 p-3 gap-2 overflow-x-auto">
+                    <div class="flex items-center space-x-2 px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold whitespace-nowrap"><span class="w-4 h-4 rounded-full bg-blue-600 flex items-center justify-center text-[9px] text-white">1</span><span>Patient Intake</span></div>
+                    <div class="flex items-center space-x-2 px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold whitespace-nowrap"><span class="w-4 h-4 rounded-full bg-blue-600 flex items-center justify-center text-[9px] text-white">2</span><span>Policy Parsing</span></div>
+                    <div class="flex items-center space-x-2 px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold whitespace-nowrap"><span class="w-4 h-4 rounded-full bg-blue-600 flex items-center justify-center text-[9px] text-white">3</span><span>Document Audit</span></div>
+                    <div class="flex items-center space-x-2 px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold whitespace-nowrap"><span class="w-4 h-4 rounded-full bg-blue-600 flex items-center justify-center text-[9px] text-white">4</span><span>Letter Gen</span></div>
+                    <div class="flex items-center space-x-2 px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold whitespace-nowrap"><span class="w-4 h-4 rounded-full bg-blue-600 flex items-center justify-center text-[9px] text-white">5</span><span>Payer Dispatch</span></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- VIEW 2: LOGIN CARD -->
+    <!-- ========================================================================= -->
+    <div id="view-login" class="page-view min-h-screen bg-gradient-to-tr from-slate-900 via-blue-950 to-slate-900 items-center justify-center p-6">
+        <div class="w-full max-w-md bg-white border border-slate-200 rounded-2xl shadow-2xl p-8">
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 rounded-xl bg-blue-600 mx-auto flex items-center justify-center text-white font-bold text-xl mb-3 shadow-md">M</div>
+                <h2 class="text-xl font-bold text-slate-900 tracking-tight">Access Secure Node</h2>
+                <p class="text-xs text-slate-400 mt-1">Enterprise SSO Identity Provider Access Gateway</p>
+            </div>
+
+            <form class="space-y-4" onsubmit="event.preventDefault(); navigateTo('view-dashboard'); loadDashboard();">
+                <div>
+                    <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Institutional Email</label>
+                    <input type="email" value="d.brand@mayoclinic.org" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs font-medium focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition" required>
+                </div>
+                <div>
+                    <div class="flex justify-between items-center mb-1.5">
+                        <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-500">Security Password</label>
+                        <a href="#" class="text-[11px] font-medium text-blue-600 hover:underline">Forgot?</a>
+                    </div>
+                    <input type="password" value="••••••••••••" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs font-medium focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition" required>
+                </div>
+                <div class="flex items-center">
+                    <input type="checkbox" id="remember" checked class="w-4 h-4 text-blue-600 border-slate-300 rounded accent-blue-600">
+                    <label for="remember" class="ml-2 text-xs font-medium text-slate-500">Enforce session persistence</label>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 rounded-xl transition text-xs shadow-sm mt-2">
+                    Authenticate Session
+                </button>
+            </form>
+
+            <div class="relative my-5">
+                <div class="absolute inset-0 flex items-center"><div class="w-full border-t border-slate-200"></div></div>
+                <div class="relative flex justify-center text-[10px] uppercase font-bold text-slate-400"><span class="bg-white px-2">Or federated domain</span></div>
+            </div>
+
+            <button onclick="navigateTo('view-dashboard'); loadDashboard();" class="w-full flex items-center justify-center space-x-2 border border-slate-300 hover:bg-slate-50 font-medium py-2.5 rounded-xl transition text-xs text-slate-600">
+                <svg class="w-4 h-4" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.53-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-8.77z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.11 0-5.74-2.11-6.68-4.96H1.21v3.15C3.18 21.88 7.31 24 12 24z"/><path fill="#FBBC05" d="M5.32 14.24A7.16 7.16 0 0 1 5 12c0-.79.13-1.57.32-2.34V6.51H1.21A11.94 11.94 0 0 0 0 12c0 1.92.45 3.74 1.21 5.49l4.11-3.25z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.18 2.12 1.21 5.49l4.11 3.25c.94-2.85 3.57-4.96 6.68-4.96z"/></svg>
+                <span>Log In with Google Space</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- VIEW 3: MAIN OPERATIONAL DASHBOARD -->
+    <!-- ========================================================================= -->
+    <div id="view-dashboard" class="page-view min-h-screen flex flex-row">
+        <!-- Persistent Left Sidebar -->
+        <aside class="w-64 bg-white border-r border-slate-200 flex flex-col justify-between shrink-0">
+            <div class="p-5">
+                <div class="flex items-center space-x-3 mb-6">
+                    <div class="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-sm">M</div>
+                    <span class="text-base font-bold tracking-tight">MediFlow <span class="text-blue-600">AI</span></span>
+                </div>
+                <nav class="space-y-1">
+                    <button class="w-full flex items-center space-x-3 px-3 py-2 rounded-xl text-xs font-bold bg-blue-50 text-blue-700 transition text-left"><i data-lucide="layout-dashboard" class="w-4 h-4"></i><span>Operational Dashboard</span></button>
+                    <button onclick="navigateTo('view-cases')" class="w-full flex items-center space-x-3 px-3 py-2 rounded-xl text-xs font-bold text-slate-600 hover:bg-slate-50 transition text-left"><i data-lucide="file-spreadsheet" class="w-4 h-4"></i><span>Prior Auth Cases</span></button>
+                    <button class="w-full flex items-center space-x-3 px-3 py-2 rounded-xl text-xs font-bold text-slate-600 hover:bg-slate-50 transition text-left"><i data-lucide="brain" class="w-4 h-4"></i><span>AI Policy Engine</span></button>
+                    <button class="w-full flex items-center space-x-3 px-3 py-2 rounded-xl text-xs font-bold text-slate-600 hover:bg-slate-50 transition text-left"><i data-lucide="network" class="w-4 h-4"></i><span>Evidence Map</span></button>
+                    <button class="w-full flex items-center space-x-3 px-3 py-2 rounded-xl text-xs font-bold text-slate-600 hover:bg-slate-50 transition text-left"><i data-lucide="file-down" class="w-4 h-4"></i><span>Generated Letters</span></button>
+                </nav>
+            </div>
+            <button id="api-base-footer" onclick="promptApiBase()" class="p-4 border-t border-slate-200 text-[10px] font-mono font-semibold text-slate-400 text-left hover:bg-slate-50 transition flex items-center justify-between group">
+                <span id="api-base-label">API: ...</span>
+                <i data-lucide="settings" class="w-3.5 h-3.5 text-slate-300 group-hover:text-slate-500"></i>
+            </button>
+        </aside>
+
+        <!-- Main Workspace Space -->
+        <div class="flex-1 flex flex-col min-w-0">
+            <!-- Top App Navbar -->
+            <header class="h-16 bg-white border-b border-slate-200 px-6 flex items-center justify-between shadow-sm shrink-0">
+                <div class="flex items-center space-x-3 flex-1 max-w-md">
+                    <i data-lucide="search" class="w-4 h-4 text-slate-400"></i>
+                    <input type="text" id="global-search-input" onkeydown="handleGlobalSearch(event)" placeholder="Global system track (Enter Patient ID, e.g. P001)..." class="w-full text-xs font-medium outline-none">
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div id="system-status-badge" class="flex items-center space-x-1.5 bg-slate-100 text-slate-500 border border-slate-200 px-2.5 py-1 rounded-lg text-[11px] font-bold">
+                        <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span><span>Checking backend...</span>
+                    </div>
+                    <i data-lucide="bell" class="w-4 h-4 text-slate-500 cursor-pointer"></i>
+                    <div class="w-7 h-7 rounded-full bg-slate-200 text-[10px] font-bold flex items-center justify-center border border-slate-300">DB</div>
+                </div>
+            </header>
+
+            <!-- Inner Canvas Body -->
+            <main class="flex-1 p-6 overflow-y-auto">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                    <div>
+                        <h1 class="text-xl font-bold tracking-tight text-slate-900">Today's Prior Authorization Overview</h1>
+                        <p class="text-xs text-slate-500 mt-0.5">Real-time insurance criteria verification and workflow monitoring.</p>
+                    </div>
+
+                    <!-- UPLOAD INTERACTION WIDGET -->
+                    <div>
+                        <label class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl cursor-pointer shadow-sm transition flex items-center space-x-2">
+                            <i data-lucide="upload" class="w-4 h-4"></i>
+                            <span id="upload-btn-text">Intake Patient Report</span>
+                            <input type="file" id="patient-file-input" class="hidden" onchange="handleFileIntake()">
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Processing / Upload Status Alert -->
+                <div id="processing-alert" class="hidden mb-6 p-4 bg-blue-50 border border-blue-200 rounded-xl items-center space-x-3">
+                    <i data-lucide="refresh-cw" class="w-4 h-4 text-blue-600 animate-spin"></i>
+                    <span id="processing-text" class="text-xs font-semibold text-blue-800"></span>
+                </div>
+
+                <!-- KPI Metric Cards Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                    <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Active Audit Cases</span>
+                        <p id="kpi-active" class="text-2xl font-extrabold text-slate-900 mt-1 skeleton">—</p>
+                        <p class="text-[11px] text-slate-400 mt-0.5 font-medium">Live from MediFlow backend</p>
+                    </div>
+                    <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm border-l-4 border-l-emerald-500">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Ready For Submission</span>
+                        <p id="kpi-ready" class="text-2xl font-extrabold text-slate-900 mt-1 skeleton">—</p>
+                        <p class="text-[11px] text-emerald-600 font-bold mt-0.5">Verified via policy check</p>
+                    </div>
+                    <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm border-l-4 border-l-rose-500">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">High Risk Flagged</span>
+                        <p id="kpi-highrisk" class="text-2xl font-extrabold text-slate-900 mt-1 skeleton">—</p>
+                        <p class="text-[11px] text-rose-600 font-bold mt-0.5">Requires immediate remedy</p>
+                    </div>
+                </div>
+
+                <!-- Toolbar Filters Layout -->
+                <div class="bg-white border border-slate-200 rounded-xl p-3 mb-4 shadow-sm flex items-center justify-between text-xs">
+                    <div class="flex items-center space-x-2">
+                        <select id="status-filter" onchange="renderDashboardTable(patientsCache)" class="bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-1.5 font-bold text-slate-600">
+                            <option value="all">Status: All Cases</option>
+                            <option value="flagged">Status: Risk Flagged</option>
+                            <option value="ready">Status: Ready to Submit</option>
+                            <option value="auditing">Status: Auditing Context</option>
+                        </select>
+                        <button onclick="loadDashboard()" class="bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-1.5 font-bold text-slate-600 hover:bg-slate-100 transition flex items-center gap-1"><i data-lucide="refresh-cw" class="w-3 h-3"></i> Refresh</button>
+                    </div>
+                    <span id="instances-count" class="text-[11px] font-mono text-slate-400 font-bold">— Instances Displayed</span>
+                </div>
+
+                <!-- High Density Case Workspace Table -->
+                <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
+                    <table class="w-full text-left border-collapse text-xs">
+                        <thead>
+                            <tr class="bg-slate-50 border-b border-slate-200 font-bold uppercase tracking-wider text-slate-400">
+                                <th class="p-4 pl-6">Patient Tracking Entity</th>
+                                <th class="p-4">Requested Intervention</th>
+                                <th class="p-4">Insurance Provider</th>
+                                <th class="p-4">Pipeline Status</th>
+                                <th class="p-4 pr-6 text-right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="patients-tbody" class="divide-y divide-slate-200 font-semibold text-slate-700">
+                            <tr><td colspan="5" class="p-6 text-center text-slate-400 text-xs font-semibold skeleton">Connecting to MediFlow backend...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- VIEW 4 & 5: DEEP CASE DETAILS & AI WORKSPACE -->
+    <!-- ========================================================================= -->
+    <div id="view-cases" class="page-view min-h-screen flex flex-col">
+        <!-- Sub-header Meta row -->
+        <div class="bg-white border-b border-slate-200 px-6 py-3.5 flex items-center justify-between shadow-sm shrink-0 flex-wrap gap-3">
+            <div class="flex items-center space-x-4">
+                <button onclick="navigateTo('view-dashboard')" class="p-2 hover:bg-slate-100 rounded-xl text-slate-500 transition"><i data-lucide="arrow-left" class="w-4 h-4"></i></button>
+                <div>
+                    <div class="flex items-center space-x-2">
+                        <h1 id="case-patient-name" class="text-base font-bold tracking-tight text-slate-900">Select a patient</h1>
+                        <span id="case-status-badge" class="px-2 py-0.5 rounded-full text-[10px] font-extrabold border bg-slate-50 text-slate-500 border-slate-200">—</span>
+                    </div>
+                    <p id="case-meta" class="text-[11px] font-medium text-slate-500 mt-0.5">No case loaded yet</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <select id="case-patient-select" onchange="openCase(this.value)" class="text-xs font-bold border border-slate-200 rounded-lg px-2.5 py-1.5 bg-slate-50 text-slate-600">
+                    <option value="">Jump to patient…</option>
+                </select>
+                <div class="flex items-center space-x-2 text-[10px] font-bold text-slate-400">
+                    <span class="text-emerald-600">1. Intake Processed</span> <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                    <span class="text-blue-600">2. Clause-by-Clause Audit</span> <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                    <span>3. Authorization Review</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Custom Deep Navigation Tab Strip -->
+        <div class="bg-white border-b border-slate-200 px-6 flex space-x-6 text-xs font-bold text-slate-500 shrink-0">
+            <button id="tab-btn-audit" onclick="switchTab('audit')" class="py-3 border-b-2 border-blue-600 text-blue-600 transition">Clause-by-Clause Policy Audit</button>
+            <button id="tab-btn-evidence" onclick="switchTab('evidence')" class="py-3 border-b-2 border-transparent hover:text-slate-800 transition">Compliance Evidence Map</button>
+            <button id="tab-btn-letter" onclick="switchTab('letter')" class="py-3 border-b-2 border-transparent hover:text-slate-800 transition">Generated Appeal Document</button>
+        </div>
+
+        <!-- Inner Split Operational Canvas Area -->
+        <div class="flex-1 flex overflow-hidden">
+            <!-- Left Workspace (Dynamically swapped via subtabs) -->
+            <div class="flex-1 p-6 overflow-y-auto min-w-0">
+
+                <!-- SUBTAB CONTENT: CLAUSE AUDIT -->
+                <div id="subtab-audit" class="subtab-content space-y-4 max-w-4xl mx-auto">
+
+                    <!-- Previous Authorization History -->
+                    <div id="auth-history-block" class="hidden bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
+                        <h4 class="font-extrabold text-slate-900 text-xs uppercase tracking-wider mb-2 flex items-center gap-1.5"><i data-lucide="history" class="w-3.5 h-3.5 text-slate-400"></i>Previous Authorization History</h4>
+                        <div id="auth-history-list" class="space-y-1.5 text-xs"></div>
+                    </div>
+
+                    <!-- Missing Documentation Box Callout (populated dynamically, hidden if none) -->
+                    <div id="missing-doc-callout" class="hidden bg-amber-50 border border-amber-200 rounded-xl p-4 items-start space-x-3 shadow-sm">
+                        <i data-lucide="alert-triangle" class="w-5 h-5 text-amber-600 shrink-0 mt-0.5"></i>
+                        <div class="text-xs">
+                            <h4 class="font-extrabold text-amber-900 text-sm">Actionable Non-Compliance Parameter Flagged</h4>
+                            <p class="text-slate-600 mt-1 leading-relaxed">
+                                <span class="font-bold text-amber-800">Deficient State:</span> <span id="callout-deficient-text"></span>
+                            </p>
+                            <div class="mt-2 text-amber-800 font-bold"><span class="underline">System Suggested Fix:</span> <span id="callout-fix-text"></span></div>
+                        </div>
+                    </div>
+
+                    <!-- Accordion Clause List (built dynamically) -->
+                    <div id="clause-accordion-list" class="space-y-2">
+                        <div class="text-xs text-slate-400 font-semibold p-6 text-center border border-dashed border-slate-200 rounded-xl">Open a case from the dashboard to load its clause-by-clause audit.</div>
+                    </div>
+                </div>
+
+                <!-- SUBTAB CONTENT: EVIDENCE MAP -->
+                <div id="subtab-evidence" class="subtab-content hidden max-w-5xl mx-auto space-y-4">
+                    <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
+                        <div class="p-3 bg-slate-50 border-b border-slate-200 flex items-center justify-between text-xs">
+                            <div class="flex items-center space-x-2">
+                                <input type="checkbox" id="isolatedCheck" onchange="renderEvidenceMap(evidenceCache)" class="rounded border-slate-300 accent-blue-600">
+                                <label for="isolatedCheck" class="font-bold text-slate-600">Show Deficient Context Parameters Only</label>
+                            </div>
+                            <button onclick="exportEvidenceCsv()" class="bg-white border border-slate-300 font-bold px-2.5 py-1 rounded-lg text-slate-700 hover:bg-slate-50 shadow-sm">Export Compliance CSV</button>
+                        </div>
+                        <table class="w-full text-left border-collapse text-xs">
+                            <thead>
+                                <tr class="bg-slate-100 border-b border-slate-200 font-bold text-slate-400 uppercase tracking-wider"><th class="p-3 pl-4">Insurance Requirement Parameter</th><th class="p-3">Matched EMR Clinical Record Anchor</th><th class="p-3">Status</th><th class="p-3 font-mono">Timestamp</th><th class="p-3 pr-4">Precision Metric</th></tr>
+                            </thead>
+                            <tbody id="evidence-tbody" class="divide-y divide-slate-200 font-semibold text-slate-700">
+                                <tr><td colspan="5" class="p-4 text-center text-slate-400 text-xs">No case loaded yet.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- SUBTAB CONTENT: LETTER EDITOR -->
+                <div id="subtab-letter" class="subtab-content hidden max-w-3xl mx-auto space-y-4">
+                    <div class="bg-white border border-slate-200 rounded-xl p-3 flex items-center justify-between shadow-sm text-xs font-bold">
+                        <button onclick="regenerateLetter()" class="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-lg hover:bg-slate-200 transition">Regenerate AI Template Text</button>
+                        <button onclick="dispatchLetter()" class="bg-blue-600 text-white px-4 py-1.5 rounded-lg hover:bg-blue-700 transition shadow-sm">Dispatch Secure Payer Stream</button>
+                    </div>
+
+                    <!-- Premium Canvas Sheet Mock Paper Document -->
+                    <div class="bg-white border border-slate-300 rounded-xl shadow-xl p-10 min-h-[500px] text-slate-800 serif-doc leading-relaxed text-sm">
+                        <div class="border-b border-slate-200 pb-3 mb-4 font-sans text-right text-[10px] font-bold tracking-wider text-slate-400 uppercase">MAYO CLINICAL PLUGINS • REVENUE INTELLIGENCE NODE</div>
+                        <p class="font-sans text-[11px] font-bold text-slate-900">DATE: <span id="letter-date">—</span></p>
+                        <p class="font-sans text-[11px] font-bold text-slate-900 mt-0.5">ATTN: <span id="letter-attn">—</span></p>
+
+                        <p class="mt-6 font-bold font-sans text-slate-900" id="letter-subject">SUBJECT: Formal Clinical Prior Authorization Appeal Review Matrix</p>
+                        <p class="text-[11px] font-sans text-slate-400 font-mono mt-0.5">Patient Tracking Entity: <span id="letter-patient-name">—</span> // Case Reference Code: <span id="letter-case-ref">—</span></p>
+
+                        <div id="letter-body" class="mt-5 space-y-4">
+                            <p class="text-slate-400 text-xs font-sans">No letter generated yet — open a case to auto-generate one from the MCP letter tool.</p>
+                        </div>
+
+                        <div class="mt-12 border-t border-slate-200 pt-4 font-sans text-[10px] text-slate-400">Secure Cryptographic Institutional Verification Signature: <span id="letter-signature" class="font-mono font-bold text-slate-600">—</span></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Sidebar: Floating AI Contextual Copilot Panel -->
+            <aside class="w-80 bg-white border-l border-slate-200 flex flex-col justify-between shrink-0 shadow-lg">
+                <div class="p-4 border-b border-slate-200 bg-slate-50 flex items-center space-x-2 text-slate-800 font-bold text-xs uppercase tracking-wider">
+                    <i data-lucide="message-square" class="w-4 h-4 text-blue-600"></i>
+                    <span>System Copilot Engine</span>
+                </div>
+
+                <!-- Chat Log Stream Terminal -->
+                <div id="copilot-terminal" class="flex-1 p-4 overflow-y-auto text-xs space-y-3 font-medium">
+                    <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-600">
+                        <span class="block uppercase font-bold text-[9px] text-slate-400 tracking-wider mb-1">System Audit System Core</span>
+                        <p>Open a patient case and I'll answer questions against their live policy + eligibility data.</p>
+                    </div>
+                </div>
+
+                <!-- Input Interface Panel Form -->
+                <form onsubmit="handleCopilotQuery(event)" class="p-3 border-t border-slate-200 bg-slate-50">
+                    <div class="relative flex items-center bg-white border border-slate-300 rounded-xl overflow-hidden focus-within:ring-2 focus-within:ring-blue-500/20 focus-within:border-blue-500 transition shadow-sm">
+                        <input type="text" id="copilot-input" placeholder="Ask policy vectors ('Why is this flagged?')..." class="w-full pl-3 pr-10 py-2.5 text-xs font-semibold outline-none bg-transparent placeholder-slate-400 text-slate-900">
+                        <button type="submit" class="absolute right-1.5 p-1.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-sm"><i data-lucide="chevron-right" class="w-3.5 h-3.5"></i></button>
+                    </div>
+                </form>
+            </aside>
+        </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- JAVASCRIPT APPLICATION CORE LOGIC -->
+    <!-- ========================================================================= -->
+    <script>
+        /* =====================================================================
+         * EXPECTED BACKEND API CONTRACT
+         * ---------------------------------------------------------------------
+         * This frontend talks to a REST layer (e.g. FastAPI) that sits in front
+         * of your MediFlow MCP server and wraps each MCP tool as an HTTP route.
+         * A browser cannot call an MCP tool directly — MCP speaks its own
+         * protocol over stdio/SSE, not plain HTTP — so this wrapper is required.
+         *
+         *  GET  /health
+         *      -> 200 OK if the backend (and its MCP connection) is alive
+         *
+         *  GET  /patients
+         *      -> [{ id, name, procedure, cpt, insurance, status, case_ref }, ...]
+         *         status is one of: "flagged" | "ready" | "auditing"
+         *         (backed by listing your patients.json / case index)
+         *
+         *  GET  /patient/{id}
+         *      -> { id, name, diagnosis, procedure, cpt, insurance, status, case_ref }
+         *         (backed by the patient_history MCP tool)
+         *
+         *  GET  /eligibility/{id}?provider=<insurance_name>
+         *      -> {
+         *           status: "flagged" | "ready" | "auditing",
+         *           summary: { deficient_state, suggested_fix } | null,
+         *           clauses: [
+         *             { id, title, rule_text, status: "satisfied"|"deficient",
+         *               match_pct, ehr_link_title, ehr_link_date,
+         *               coding, coding_status, gap_text }
+         *           ],
+         *           evidence: [
+         *             { requirement, matched_record, status: "satisfied"|"deficient",
+         *               timestamp, match_pct }
+         *           ]
+         *         }
+         *         (backed by the eligibility MCP tool: compare_eligibility)
+         *
+         *  GET  /authorization-history/{id}
+         *      -> [{ date, provider, procedure, outcome }, ...]
+         *         (backed by authorization_history.json)
+         *
+         *  GET  /authorization-letter/{id}?provider=<insurance_name>&regenerate=true|false
+         *      -> { date, attn, subject, patient_name, case_ref,
+         *           paragraphs: [string, ...], citation_label, signature }
+         *         (backed by the authorization_letter MCP tool)
+         *
+         *  POST /authorization-letter/{id}/dispatch
+         *      -> { ok: true }
+         *
+         *  POST /copilot   body: { patient_id, query }
+         *      -> { answer: string }
+         *         (backed by your provider agent, given the patient/eligibility context)
+         *
+         *  POST /intake    multipart/form-data, field name "file"
+         *      -> { patient_id, case_ref }
+         *         (kicks off patient_history + eligibility for the newly intaken file)
+         * ===================================================================== */
+
+        const DEFAULT_API_BASE = 'http://localhost:8000';
+        let API_BASE = localStorage.getItem('mediflow_api_base') || DEFAULT_API_BASE;
+
+        let patientsCache = [];
+        let evidenceCache = [];
+        let currentPatientId = null;
+        let currentPatientRecord = null;
+
+        // ---------------------------------------------------------------
+        // Low-level fetch helper
+        // ---------------------------------------------------------------
+        async function apiFetch(path, options = {}) {
+            const res = await fetch(`${API_BASE}${path}`, {
+                headers: { 'Content-Type': 'application/json', ...(options.headers || {}) },
+                ...options
+            });
+            if (!res.ok) {
+                let detail = '';
+                try { detail = (await res.json()).detail || ''; } catch (e) { /* not json */ }
+                throw new Error(detail || `Request failed (${res.status})`);
+            }
+            const ct = res.headers.get('content-type') || '';
+            return ct.includes('application/json') ? res.json() : res.text();
+        }
+
+        function promptApiBase() {
+            const v = prompt('MediFlow backend API base URL (your FastAPI server that wraps the MCP tools):', API_BASE);
+            if (v && v.trim()) {
+                API_BASE = v.trim().replace(/\/$/, '');
+                localStorage.setItem('mediflow_api_base', API_BASE);
+                document.getElementById('api-base-label').innerText = `API: ${API_BASE}`;
+                checkBackendHealth();
+                loadDashboard();
+            }
+        }
+
+        async function checkBackendHealth() {
+            const badge = document.getElementById('system-status-badge');
+            const label = document.getElementById('api-base-label');
+            if (label) label.innerText = `API: ${API_BASE}`;
+            if (!badge) return;
+            try {
+                await apiFetch('/health');
+                badge.className = "flex items-center space-x-1.5 bg-emerald-50 text-emerald-700 border border-emerald-200 px-2.5 py-1 rounded-lg text-[11px] font-bold";
+                badge.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span><span>System Online</span>';
+            } catch (err) {
+                badge.className = "flex items-center space-x-1.5 bg-rose-50 text-rose-700 border border-rose-200 px-2.5 py-1 rounded-lg text-[11px] font-bold";
+                badge.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span><span>Backend Offline</span>';
+            }
+        }
+
+        // ---------------------------------------------------------------
+        // Status helpers
+        // ---------------------------------------------------------------
+        function statusMeta(status) {
+            switch (status) {
+                case 'ready': return { label: 'Ready to Submit', badge: 'border-emerald-200 bg-emerald-50 text-emerald-700' };
+                case 'flagged': return { label: 'Risk Flagged', badge: 'border-rose-200 bg-rose-50 text-rose-700' };
+                default: return { label: 'Auditing Context', badge: 'border-amber-200 bg-amber-50 text-amber-700' };
+            }
+        }
+
+        // ---------------------------------------------------------------
+        // 1. Navigation Routing Engine
+        // ---------------------------------------------------------------
+        function navigateTo(viewId) {
+            document.querySelectorAll('.page-view').forEach(view => view.classList.remove('active'));
+            const targetView = document.getElementById(viewId);
+            if (targetView) {
+                targetView.classList.add('active');
+                lucide.createIcons();
+            }
+        }
+
+        function handleGlobalSearch(e) {
+            if (e.key !== 'Enter') return;
+            const id = e.target.value.trim();
+            if (!id) return;
+            openCase(id);
+        }
+
+        // ---------------------------------------------------------------
+        // 2. Tab Swapping Interface Logic
+        // ---------------------------------------------------------------
+        function switchTab(tabKey) {
+            document.querySelectorAll('.subtab-content').forEach(content => content.classList.add('hidden'));
+            document.getElementById(`subtab-${tabKey}`).classList.remove('hidden');
+
+            const tabs = ['audit', 'evidence', 'letter'];
+            tabs.forEach(t => {
+                const btn = document.getElementById(`tab-btn-${t}`);
+                if (t === tabKey) {
+                    btn.classList.remove('border-transparent', 'text-slate-500');
+                    btn.classList.add('border-blue-600', 'text-blue-600');
+                } else {
+                    btn.classList.add('border-transparent', 'text-slate-500');
+                    btn.classList.remove('border-blue-600', 'text-blue-600');
+                }
+            });
+            lucide.createIcons();
+        }
+
+        // ---------------------------------------------------------------
+        // 3. Accordion Expanding Framework Actions
+        // ---------------------------------------------------------------
+        function toggleAccordion(accId) {
+            const panel = document.getElementById(accId);
+            panel.classList.toggle('hidden');
+        }
+
+        // ---------------------------------------------------------------
+        // Dashboard: load + render patient list, KPIs, table
+        // ---------------------------------------------------------------
+        async function loadDashboard() {
+            const tbody = document.getElementById('patients-tbody');
+            tbody.innerHTML = `<tr><td colspan="5" class="p-6 text-center text-slate-400 text-xs font-semibold skeleton">Loading cases from MediFlow backend...</td></tr>`;
+            try {
+                const patients = await apiFetch('/patients');
+                patientsCache = Array.isArray(patients) ? patients : [];
+                renderPatientSelector();
+                renderDashboardTable(patientsCache);
+                renderDashboardStats(patientsCache);
+            } catch (err) {
+                tbody.innerHTML = `<tr><td colspan="5" class="p-6 text-center text-rose-500 text-xs font-semibold">Couldn't reach ${API_BASE}/patients — ${err.message}. Click the API settings link in the sidebar to point this at your backend.</td></tr>`;
+                document.getElementById('kpi-active').innerText = '—';
+                document.getElementById('kpi-ready').innerText = '—';
+                document.getElementById('kpi-highrisk').innerText = '—';
+            }
+            checkBackendHealth();
+        }
+
+        function renderDashboardStats(patients) {
+            const active = patients.length;
+            const ready = patients.filter(p => p.status === 'ready').length;
+            const highRisk = patients.filter(p => p.status === 'flagged').length;
+            document.getElementById('kpi-active').innerText = active;
+            document.getElementById('kpi-ready').innerText = ready;
+            document.getElementById('kpi-highrisk').innerText = highRisk;
+            document.querySelectorAll('#kpi-active, #kpi-ready, #kpi-highrisk').forEach(el => el.classList.remove('skeleton'));
+        }
+
+        function renderDashboardTable(patients) {
+            const tbody = document.getElementById('patients-tbody');
+            const filter = document.getElementById('status-filter').value;
+            const filtered = filter === 'all' ? patients : patients.filter(p => p.status === filter);
+
+            document.getElementById('instances-count').innerText = `${filtered.length} Instance${filtered.length === 1 ? '' : 's'} Displayed`;
+
+            if (!filtered.length) {
+                tbody.innerHTML = `<tr><td colspan="5" class="p-6 text-center text-slate-400 text-xs font-semibold">No cases match this filter.</td></tr>`;
+                return;
+            }
+
+            tbody.innerHTML = filtered.map(p => {
+                const meta = statusMeta(p.status);
+                return `
+                <tr class="hover:bg-slate-50/50 transition">
+                    <td class="p-4 pl-6">
+                        <div class="font-extrabold text-slate-900 text-sm">${escapeHtml(p.name || p.id)}</div>
+                        <div class="text-[10px] text-slate-400 font-mono mt-0.5">${escapeHtml(p.case_ref || p.id)}</div>
+                    </td>
+                    <td class="p-4 font-medium text-slate-500 text-xs">${escapeHtml(p.procedure || '—')}${p.cpt ? ' (CPT ' + escapeHtml(p.cpt) + ')' : ''}</td>
+                    <td class="p-4 text-slate-900 font-bold">${escapeHtml(p.insurance || '—')}</td>
+                    <td class="p-4"><span class="px-2 py-0.5 rounded-full border ${meta.badge} text-[10px] font-extrabold">${meta.label}</span></td>
+                    <td class="p-4 pr-6 text-right"><button onclick="openCase('${escapeAttr(p.id)}')" class="bg-blue-50 text-blue-600 hover:bg-blue-100 px-3 py-1.5 rounded-lg transition font-bold">Audit Case</button></td>
+                </tr>`;
+            }).join('');
+        }
+
+        function renderPatientSelector() {
+            const select = document.getElementById('case-patient-select');
+            const current = select.value;
+            select.innerHTML = '<option value="">Jump to patient…</option>' +
+                patientsCache.map(p => `<option value="${escapeAttr(p.id)}">${escapeHtml(p.id)} — ${escapeHtml(p.name || '')}</option>`).join('');
+            if (current) select.value = current;
+        }
+
+        // ---------------------------------------------------------------
+        // File intake -> real backend call
+        // ---------------------------------------------------------------
+        async function handleFileIntake() {
+            const fileInput = document.getElementById('patient-file-input');
+            const alertBox = document.getElementById('processing-alert');
+            const txt = document.getElementById('processing-text');
+            const btnText = document.getElementById('upload-btn-text');
+
+            if (!fileInput.files.length) return;
+            const file = fileInput.files[0];
+
+            alertBox.style.display = 'flex';
+            btnText.innerText = 'Uploading...';
+            txt.innerText = `Uploading ${file.name} to intake pipeline...`;
+
+            try {
+                const form = new FormData();
+                form.append('file', file);
+                const res = await fetch(`${API_BASE}/intake`, { method: 'POST', body: form });
+                if (!res.ok) throw new Error(`Intake failed (${res.status})`);
+                const data = await res.json();
+
+                txt.innerText = 'Running eligibility checks against payer policy...';
+                await loadDashboard();
+
+                alertBox.style.display = 'none';
+                btnText.innerText = 'Intake Patient Report';
+                fileInput.value = '';
+
+                if (data && data.patient_id) {
+                    alert(`Intake complete. Case ${data.case_ref || ''} created. Opening case workspace.`);
+                    openCase(data.patient_id);
+                } else {
+                    alert('Intake complete.');
+                }
+            } catch (err) {
+                alertBox.style.display = 'none';
+                btnText.innerText = 'Intake Patient Report';
+                alert(`Intake failed: ${err.message}. Confirm your backend exposes POST /intake and is reachable at ${API_BASE}.`);
+            }
+        }
+
+        // ---------------------------------------------------------------
+        // Case workspace: load a single patient's full picture
+        // ---------------------------------------------------------------
+        async function openCase(id) {
+            if (!id) return;
+            currentPatientId = id;
+            navigateTo('view-cases');
+            document.getElementById('case-patient-select').value = id;
+            await loadCaseWorkspace(id);
+        }
+
+        async function loadCaseWorkspace(id) {
+            setCaseHeaderLoading(id);
+
+            const [patientRes, eligibilityRes, historyRes, letterRes] = await Promise.allSettled([
+                apiFetch(`/patient/${encodeURIComponent(id)}`),
+                apiFetch(`/eligibility/${encodeURIComponent(id)}`),
+                apiFetch(`/authorization-history/${encodeURIComponent(id)}`),
+                apiFetch(`/authorization-letter/${encodeURIComponent(id)}`)
+            ]);
+
+            if (patientRes.status === 'fulfilled') {
+                currentPatientRecord = patientRes.value;
+                renderCaseHeader(currentPatientRecord);
+            } else {
+                renderCaseHeaderError(id, patientRes.reason);
+            }
+
+            if (eligibilityRes.status === 'fulfilled') {
+                renderClauseAudit(eligibilityRes.value);
+                evidenceCache = eligibilityRes.value.evidence || [];
+                renderEvidenceMap(evidenceCache);
+            } else {
+                renderClauseAuditError(eligibilityRes.reason);
+                evidenceCache = [];
+                renderEvidenceMap([]);
+            }
+
+            if (historyRes.status === 'fulfilled') {
+                renderAuthHistory(historyRes.value);
+            } else {
+                document.getElementById('auth-history-block').classList.add('hidden');
+            }
+
+            if (letterRes.status === 'fulfilled') {
+                renderLetter(letterRes.value);
+            } else {
+                renderLetterError(letterRes.reason);
+            }
+
+            resetCopilotForNewCase(id);
+            lucide.createIcons();
+        }
+
+        function setCaseHeaderLoading(id) {
+            document.getElementById('case-patient-name').innerText = `Loading ${id}...`;
+            document.getElementById('case-meta').innerText = 'Fetching patient, eligibility, history and letter data...';
+            document.getElementById('case-status-badge').className = 'px-2 py-0.5 rounded-full text-[10px] font-extrabold border bg-slate-50 text-slate-500 border-slate-200 skeleton';
+            document.getElementById('case-status-badge').innerText = '...';
+        }
+
+        function renderCaseHeader(patient) {
+            const meta = statusMeta(patient.status);
+            document.getElementById('case-patient-name').innerText = `Patient File: ${patient.name || patient.id}`;
+            document.getElementById('case-meta').innerText = `${patient.procedure || patient.diagnosis || 'No procedure on file'}${patient.cpt ? ' (CPT ' + patient.cpt + ')' : ''} • ${patient.insurance || 'No insurance on file'}`;
+            const badge = document.getElementById('case-status-badge');
+            badge.className = `px-2 py-0.5 rounded-full text-[10px] font-extrabold border ${meta.badge}`;
+            badge.innerText = meta.label;
+        }
+
+        function renderCaseHeaderError(id, err) {
+            document.getElementById('case-patient-name').innerText = `Patient File: ${id}`;
+            document.getElementById('case-meta').innerText = `Couldn't load patient record — ${err && err.message ? err.message : 'unknown error'}`;
+            const badge = document.getElementById('case-status-badge');
+            badge.className = 'px-2 py-0.5 rounded-full text-[10px] font-extrabold border bg-rose-50 text-rose-700 border-rose-200';
+            badge.innerText = 'Load Failed';
+        }
+
+        // ---------------------------------------------------------------
+        // Clause-by-clause audit + missing doc callout
+        // ---------------------------------------------------------------
+        function renderClauseAudit(eligibility) {
+            const callout = document.getElementById('missing-doc-callout');
+            if (eligibility.summary && eligibility.summary.deficient_state) {
+                callout.classList.remove('hidden');
+                callout.classList.add('flex');
+                document.getElementById('callout-deficient-text').innerText = eligibility.summary.deficient_state;
+                document.getElementById('callout-fix-text').innerText = eligibility.summary.suggested_fix || 'Review flagged clauses below.';
+            } else {
+                callout.classList.add('hidden');
+                callout.classList.remove('flex');
+            }
+
+            const list = document.getElementById('clause-accordion-list');
+            const clauses = eligibility.clauses || [];
+            if (!clauses.length) {
+                list.innerHTML = `<div class="text-xs text-slate-400 font-semibold p-6 text-center border border-dashed border-slate-200 rounded-xl">No clause data returned by the eligibility endpoint for this patient.</div>`;
+                return;
+            }
+
+            list.innerHTML = clauses.map((clause, idx) => {
+                const accId = `acc-${idx}`;
+                const isSatisfied = clause.status === 'satisfied';
+                const iconHtml = isSatisfied
+                    ? '<i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i>'
+                    : '<i data-lucide="alert-circle" class="w-4 h-4 text-rose-500"></i>';
+                const badgeHtml = isSatisfied
+                    ? '<span class="px-2 py-0.5 rounded-full text-[9px] font-bold border bg-emerald-50 text-emerald-700 border-emerald-200">Satisfied</span>'
+                    : '<span class="px-2 py-0.5 rounded-full text-[9px] font-bold border bg-rose-50 text-rose-700 border-rose-200">Deficient</span>';
+
+                const detailHtml = isSatisfied ? `
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="bg-white p-3 border border-slate-200 rounded-lg">
+                            <span class="block text-[9px] font-bold text-slate-400 uppercase tracking-wider">EHR Audit Link</span>
+                            <div class="font-bold text-slate-900 mt-0.5">${escapeHtml(clause.ehr_link_title || '—')}</div>
+                            <div class="text-[10px] text-slate-400 font-mono">Date: ${escapeHtml(clause.ehr_link_date || '—')}</div>
+                        </div>
+                        <div class="bg-white p-3 border border-slate-200 rounded-lg">
+                            <span class="block text-[9px] font-bold text-slate-400 uppercase tracking-wider font-mono">Medical Coding Index</span>
+                            <div class="font-bold text-slate-800 mt-0.5">${escapeHtml(clause.coding || '—')}</div>
+                            <div class="text-[10px] text-emerald-600 font-bold">${escapeHtml(clause.coding_status || 'Verified')}</div>
+                        </div>
+                    </div>` : `
+                    <div class="bg-white p-3 border border-slate-200 rounded-lg border-l-4 border-l-rose-500">
+                        <span class="block text-[9px] font-bold text-rose-500 uppercase tracking-wider">Identified Variance Gap</span>
+                        <p class="text-slate-700 mt-0.5 font-bold">${escapeHtml(clause.gap_text || 'No further detail supplied.')}</p>
+                    </div>`;
+
+                return `
+                <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
+                    <div class="p-4 flex items-center justify-between cursor-pointer hover:bg-slate-50/60" onclick="toggleAccordion('${accId}')">
+                        <div class="flex items-center space-x-2.5">
+                            ${iconHtml}
+                            <span class="font-bold text-xs text-slate-900">Clause ${escapeHtml(clause.id || (idx + 1))}: ${escapeHtml(clause.title || 'Untitled Clause')}</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-[10px] font-mono text-slate-400">${clause.match_pct != null ? clause.match_pct + '% Match Index' : ''}</span>
+                            ${badgeHtml}
+                        </div>
+                    </div>
+                    <div id="${accId}" class="hidden p-4 bg-slate-50 border-t border-slate-100 text-xs font-medium space-y-3">
+                        <div>
+                            <span class="block uppercase text-[9px] font-bold text-slate-400 tracking-wider mb-1">Extracted Policy Blueprint Rule</span>
+                            <p class="italic font-serif text-slate-700 bg-white p-3 border border-slate-200 rounded-lg">"${escapeHtml(clause.rule_text || 'No rule text provided.')}"</p>
+                        </div>
+                        ${detailHtml}
+                    </div>
+                </div>`;
+            }).join('');
+        }
+
+        function renderClauseAuditError(err) {
+            document.getElementById('missing-doc-callout').classList.add('hidden');
+            document.getElementById('clause-accordion-list').innerHTML = `<div class="text-xs text-rose-500 font-semibold p-6 text-center border border-dashed border-rose-200 rounded-xl bg-rose-50/40">Couldn't load eligibility data — ${err && err.message ? escapeHtml(err.message) : 'unknown error'}</div>`;
+        }
+
+        // ---------------------------------------------------------------
+        // Previous authorization history
+        // ---------------------------------------------------------------
+        function renderAuthHistory(history) {
+            const block = document.getElementById('auth-history-block');
+            const list = document.getElementById('auth-history-list');
+            if (!history || !history.length) {
+                block.classList.add('hidden');
+                return;
+            }
+            block.classList.remove('hidden');
+            list.innerHTML = history.map(h => `
+                <div class="flex items-center justify-between border-b border-slate-100 last:border-0 py-1.5">
+                    <span class="text-slate-500 font-mono text-[10px]">${escapeHtml(h.date || '—')}</span>
+                    <span class="text-slate-700 font-semibold flex-1 px-3">${escapeHtml(h.procedure || '—')} • ${escapeHtml(h.provider || '—')}</span>
+                    <span class="font-bold ${((h.outcome || '').toLowerCase() === 'approved') ? 'text-emerald-600' : 'text-rose-600'}">${escapeHtml(h.outcome || '—')}</span>
+                </div>`).join('');
+        }
+
+        // ---------------------------------------------------------------
+        // Evidence map
+        // ---------------------------------------------------------------
+        function renderEvidenceMap(evidence) {
+            const tbody = document.getElementById('evidence-tbody');
+            const isolatedOnly = document.getElementById('isolatedCheck').checked;
+            const rows = (evidence || []).filter(e => !isolatedOnly || e.status !== 'satisfied');
+
+            if (!rows.length) {
+                tbody.innerHTML = `<tr><td colspan="5" class="p-4 text-center text-slate-400 text-xs">No evidence rows to display.</td></tr>`;
+                return;
+            }
+
+            tbody.innerHTML = rows.map(e => {
+                const satisfied = e.status === 'satisfied';
+                return `
+                <tr class="${satisfied ? '' : 'bg-rose-50/30'}">
+                    <td class="p-3 pl-4">${escapeHtml(e.requirement || '—')}</td>
+                    <td class="p-3 ${satisfied ? 'text-slate-500' : 'text-rose-600 italic'}">${escapeHtml(e.matched_record || '—')}</td>
+                    <td class="p-3 font-bold ${satisfied ? 'text-emerald-600' : 'text-rose-600'}">${satisfied ? '● Fully Satisfied' : '■ Deficient State'}</td>
+                    <td class="p-3 font-mono text-slate-400">${escapeHtml(e.timestamp || '--')}</td>
+                    <td class="p-3 pr-4 font-bold ${satisfied ? 'text-emerald-600' : 'text-rose-600'}">${e.match_pct != null ? e.match_pct + '%' : '—'}</td>
+                </tr>`;
+            }).join('');
+        }
+
+        function exportEvidenceCsv() {
+            if (!evidenceCache.length) { alert('No evidence rows loaded for this case yet.'); return; }
+            const header = ['Requirement', 'Matched Record', 'Status', 'Timestamp', 'Match %'];
+            const rows = evidenceCache.map(e => [e.requirement, e.matched_record, e.status, e.timestamp, e.match_pct]);
+            const csv = [header, ...rows].map(r => r.map(v => `"${String(v ?? '').replace(/"/g, '""')}"`).join(',')).join('\n');
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = `${currentPatientId || 'case'}-evidence.csv`;
+            a.click();
+            URL.revokeObjectURL(a.href);
+        }
+
+        // ---------------------------------------------------------------
+        // Authorization letter
+        // ---------------------------------------------------------------
+        function renderLetter(letter) {
+            document.getElementById('letter-date').innerText = letter.date || new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+            document.getElementById('letter-attn').innerText = letter.attn || '—';
+            document.getElementById('letter-subject').innerText = `SUBJECT: ${letter.subject || 'Formal Clinical Prior Authorization Appeal Review Matrix'}`;
+            document.getElementById('letter-patient-name').innerText = letter.patient_name || (currentPatientRecord && currentPatientRecord.name) || currentPatientId || '—';
+            document.getElementById('letter-case-ref').innerText = letter.case_ref || (currentPatientRecord && currentPatientRecord.case_ref) || '—';
+            document.getElementById('letter-signature').innerText = letter.signature || '—';
+
+            const body = document.getElementById('letter-body');
+            const paragraphs = letter.paragraphs || [];
+            if (!paragraphs.length) {
+                body.innerHTML = `<p class="text-slate-400 text-xs font-sans">No letter body returned by the backend.</p>`;
+                return;
+            }
+            body.innerHTML = '';
+            paragraphs.forEach(text => {
+                const p = document.createElement('p');
+                p.className = 'mt-4';
+                p.innerText = text;
+                body.appendChild(p);
+            });
+            if (letter.citation_label) {
+                const chip = document.createElement('span');
+                chip.className = 'inline-block bg-blue-50 text-blue-800 font-sans font-bold text-[11px] px-2 py-0.5 rounded border border-blue-200 mt-3';
+                chip.innerText = letter.citation_label;
+                body.appendChild(chip);
+            }
+        }
+
+        function renderLetterError(err) {
+            document.getElementById('letter-body').innerHTML = `<p class="text-rose-500 text-xs font-sans">Couldn't generate the authorization letter — ${err && err.message ? escapeHtml(err.message) : 'unknown error'}</p>`;
+        }
+
+        async function regenerateLetter() {
+            if (!currentPatientId) return;
+            const body = document.getElementById('letter-body');
+            body.innerHTML = `<p class="text-slate-400 text-xs font-sans skeleton">Regenerating letter from the authorization_letter MCP tool...</p>`;
+            try {
+                const letter = await apiFetch(`/authorization-letter/${encodeURIComponent(currentPatientId)}?regenerate=true`);
+                renderLetter(letter);
+            } catch (err) {
+                renderLetterError(err);
+            }
+        }
+
+        async function dispatchLetter() {
+            if (!currentPatientId) return;
+            try {
+                await apiFetch(`/authorization-letter/${encodeURIComponent(currentPatientId)}/dispatch`, { method: 'POST' });
+                alert('Letter dispatched to the payer stream.');
+            } catch (err) {
+                alert(`Dispatch failed: ${err.message}`);
+            }
+        }
+
+        // ---------------------------------------------------------------
+        // AI Copilot — now backend-driven instead of hardcoded
+        // ---------------------------------------------------------------
+        function resetCopilotForNewCase(id) {
+            const terminal = document.getElementById('copilot-terminal');
+            terminal.innerHTML = `
+                <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-600">
+                    <span class="block uppercase font-bold text-[9px] text-slate-400 tracking-wider mb-1">System Audit System Core</span>
+                    <p>Context loaded for patient ${escapeHtml(id)}. Ask me about eligibility, missing documentation, or policy clauses.</p>
+                </div>`;
+        }
+
+        async function handleCopilotQuery(e) {
+            e.preventDefault();
+            const input = document.getElementById('copilot-input');
+            const terminal = document.getElementById('copilot-terminal');
+            const query = input.value.trim();
+            if (!query) return;
+
+            const userBubble = document.createElement('div');
+            userBubble.className = 'p-3 rounded-xl bg-blue-600 border border-blue-700 text-white ml-6 font-semibold shadow-sm';
+            userBubble.innerHTML = `<span class="block uppercase font-bold text-[8px] opacity-70 mb-1">Clinical Operator</span><p>${escapeHtml(query)}</p>`;
+            terminal.appendChild(userBubble);
+            input.value = '';
+            terminal.scrollTop = terminal.scrollHeight;
+
+            const typingBubble = document.createElement('div');
+            typingBubble.className = 'p-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-400 font-semibold shadow-sm';
+            typingBubble.innerHTML = `<span class="block uppercase font-bold text-[8px] text-slate-400 tracking-wider mb-1">System Intel Core</span><p>Thinking…</p>`;
+            terminal.appendChild(typingBubble);
+            terminal.scrollTop = terminal.scrollHeight;
+
+            try {
+                const res = await apiFetch('/copilot', {
+                    method: 'POST',
+                    body: JSON.stringify({ patient_id: currentPatientId, query })
+                });
+                typingBubble.innerHTML = `<span class="block uppercase font-bold text-[8px] text-slate-400 tracking-wider mb-1">System Intel Core</span><p>${escapeHtml(res.answer || 'No answer returned.')}</p>`;
+                typingBubble.classList.remove('text-slate-400');
+                typingBubble.classList.add('text-slate-700');
+            } catch (err) {
+                typingBubble.innerHTML = `<span class="block uppercase font-bold text-[8px] text-rose-400 tracking-wider mb-1">System Intel Core</span><p>Couldn't reach the copilot endpoint (${escapeHtml(err.message)}). Confirm POST ${API_BASE}/copilot is live.</p>`;
+                typingBubble.classList.add('text-rose-500');
+            }
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+
+        // ---------------------------------------------------------------
+        // Small utils
+        // ---------------------------------------------------------------
+        function escapeHtml(str) {
+            return String(str ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+        }
+        function escapeAttr(str) { return escapeHtml(str); }
+
+        // ---------------------------------------------------------------
+        // Boot
+        // ---------------------------------------------------------------
+        lucide.createIcons();
+        document.getElementById('api-base-label').innerText = `API: ${API_BASE}`;
+        checkBackendHealth();
+    </script>
+</body>
+</html>
