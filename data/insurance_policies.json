@@ -1,0 +1,173 @@
+[
+  {
+    "provider": "Blue Shield",
+    "procedure": "MRI Lumbar Spine",
+    "requirements": {
+      "minimum_pt_sessions": 6,
+      "minimum_pain_duration_weeks": 6,
+      "specialist_referral": true
+    }
+  },
+  {
+    "provider": "Blue Shield",
+    "procedure": "MRI Cervical Spine",
+    "requirements": {
+      "minimum_pt_sessions": 6,
+      "minimum_pain_duration_weeks": 6,
+      "specialist_referral": true
+    }
+  },
+  {
+    "provider": "Blue Shield",
+    "procedure": "MRI Whole Spine",
+    "requirements": {
+      "minimum_pt_sessions": 6,
+      "minimum_pain_duration_weeks": 8,
+      "specialist_referral": true
+    }
+  },
+  {
+    "provider": "Aetna",
+    "procedure": "MRI Shoulder",
+    "requirements": {
+      "minimum_pt_sessions": 6,
+      "minimum_pain_duration_weeks": 6,
+      "specialist_referral": false
+    }
+  },
+  {
+    "provider": "Aetna",
+    "procedure": "Nerve Conduction Study",
+    "requirements": {
+      "minimum_pt_sessions": 4,
+      "minimum_pain_duration_weeks": 6,
+      "specialist_referral": false
+    }
+  },
+  {
+    "provider": "Aetna",
+    "procedure": "MRI Lumbar Spine",
+    "requirements": {
+      "minimum_pt_sessions": 6,
+      "minimum_pain_duration_weeks": 6,
+      "specialist_referral": true
+    }
+  },
+  {
+    "provider": "UnitedHealthcare",
+    "procedure": "Total Knee Replacement",
+    "requirements": {
+      "minimum_pt_sessions": 10,
+      "minimum_pain_duration_weeks": 24,
+      "specialist_referral": true
+    }
+  },
+  {
+    "provider": "UnitedHealthcare",
+    "procedure": "MRI Knee",
+    "requirements": {
+      "minimum_pt_sessions": 4,
+      "minimum_pain_duration_weeks": 4,
+      "specialist_referral": false
+    }
+  },
+  {
+    "provider": "UnitedHealthcare",
+    "procedure": "MRI Cervical Spine",
+    "requirements": {
+      "minimum_pt_sessions": 6,
+      "minimum_pain_duration_weeks": 6,
+      "specialist_referral": true
+    }
+  },
+  {
+    "provider": "UnitedHealthcare",
+    "procedure": "MRI Lumbar Spine",
+    "requirements": {
+      "minimum_pt_sessions": 6,
+      "minimum_pain_duration_weeks": 6,
+      "specialist_referral": true
+    }
+  },
+  {
+    "provider": "Cigna",
+    "procedure": "MRI Brain",
+    "requirements": {
+      "minimum_pt_sessions": 0,
+      "minimum_pain_duration_weeks": 4,
+      "specialist_referral": false
+    }
+  },
+  {
+    "provider": "Cigna",
+    "procedure": "MRI Lumbar Spine",
+    "requirements": {
+      "minimum_pt_sessions": 6,
+      "minimum_pain_duration_weeks": 6,
+      "specialist_referral": true
+    }
+  },
+  {
+    "provider": "Cigna",
+    "procedure": "MRI Ankle",
+    "requirements": {
+      "minimum_pt_sessions": 4,
+      "minimum_pain_duration_weeks": 4,
+      "specialist_referral": false
+    }
+  },
+  {
+    "provider": "Cigna",
+    "procedure": "MRI Foot",
+    "requirements": {
+      "minimum_pt_sessions": 4,
+      "minimum_pain_duration_weeks": 6,
+      "specialist_referral": false
+    }
+  },
+  {
+    "provider": "Cigna",
+    "procedure": "MRI Shoulder",
+    "requirements": {
+      "minimum_pt_sessions": 6,
+      "minimum_pain_duration_weeks": 6,
+      "specialist_referral": false
+    }
+  },
+  {
+    "provider": "Medicare Advantage",
+    "procedure": "MRI Lumbar Spine",
+    "requirements": {
+      "minimum_pt_sessions": 8,
+      "minimum_pain_duration_weeks": 8,
+      "specialist_referral": true
+    }
+  },
+  {
+    "provider": "Medicare Advantage",
+    "procedure": "Total Hip Replacement",
+    "requirements": {
+      "minimum_pt_sessions": 10,
+      "minimum_pain_duration_weeks": 24,
+      "specialist_referral": true
+    }
+  },
+  {
+    "provider": "Medicare Advantage",
+    "procedure": "Total Knee Replacement",
+    "requirements": {
+      "minimum_pt_sessions": 10,
+      "minimum_pain_duration_weeks": 24,
+      "specialist_referral": true
+    }
+  },
+  {
+    "provider": "Medicare Advantage",
+    "procedure": "CT Brain",
+    "requirements": {
+      "minimum_pt_sessions": 0,
+      "minimum_pain_duration_weeks": 0,
+      "specialist_referral": false
+    }
+  }
+]

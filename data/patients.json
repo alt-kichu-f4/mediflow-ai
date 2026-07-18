@@ -1,0 +1,631 @@
+[
+  {
+    "patient_id": "P001",
+    "name": "John Smith",
+    "age": 52,
+    "gender": "Male",
+    "insurance": "Blue Shield",
+    "diagnosis": "Lumbar Disc Herniation",
+    "symptoms": [
+      "Back pain",
+      "Leg numbness"
+    ],
+    "pain_duration_weeks": 12,
+    "pain_score": 8,
+    "physical_therapy_sessions": 8,
+    "specialist_referral": true,
+    "medications": [
+      "Ibuprofen",
+      "Gabapentin"
+    ],
+    "requested_procedure": "MRI Lumbar Spine"
+  },
+  {
+    "patient_id": "P002",
+    "name": "Maria Garcia",
+    "age": 38,
+    "gender": "Female",
+    "insurance": "Aetna",
+    "diagnosis": "Rotator Cuff Tear",
+    "symptoms": [
+      "Shoulder pain",
+      "Limited range of motion"
+    ],
+    "pain_duration_weeks": 6,
+    "pain_score": 6,
+    "physical_therapy_sessions": 3,
+    "specialist_referral": false,
+    "medications": [
+      "Naproxen"
+    ],
+    "requested_procedure": "MRI Shoulder"
+  },
+  {
+    "patient_id": "P003",
+    "name": "Robert Chen",
+    "age": 61,
+    "gender": "Male",
+    "insurance": "UnitedHealthcare",
+    "diagnosis": "Chronic Knee Osteoarthritis",
+    "symptoms": [
+      "Knee pain",
+      "Swelling",
+      "Stiffness"
+    ],
+    "pain_duration_weeks": 26,
+    "pain_score": 7,
+    "physical_therapy_sessions": 12,
+    "specialist_referral": true,
+    "medications": [
+      "Acetaminophen",
+      "Meloxicam"
+    ],
+    "requested_procedure": "Total Knee Replacement"
+  },
+  {
+    "patient_id": "P004",
+    "name": "Emily Davis",
+    "age": 29,
+    "gender": "Female",
+    "insurance": "Cigna",
+    "diagnosis": "Migraine with Aura",
+    "symptoms": [
+      "Severe headache",
+      "Light sensitivity",
+      "Nausea"
+    ],
+    "pain_duration_weeks": 4,
+    "pain_score": 9,
+    "physical_therapy_sessions": 0,
+    "specialist_referral": false,
+    "medications": [
+      "Sumatriptan"
+    ],
+    "requested_procedure": "MRI Brain"
+  },
+  {
+    "patient_id": "P005",
+    "name": "James Wilson",
+    "age": 45,
+    "gender": "Male",
+    "insurance": "Blue Shield",
+    "diagnosis": "Cervical Radiculopathy",
+    "symptoms": [
+      "Neck pain",
+      "Arm weakness",
+      "Tingling"
+    ],
+    "pain_duration_weeks": 14,
+    "pain_score": 7,
+    "physical_therapy_sessions": 10,
+    "specialist_referral": true,
+    "medications": [
+      "Gabapentin",
+      "Cyclobenzaprine"
+    ],
+    "requested_procedure": "MRI Cervical Spine"
+  },
+  {
+    "patient_id": "P006",
+    "name": "Linda Martinez",
+    "age": 55,
+    "gender": "Female",
+    "insurance": "Aetna",
+    "diagnosis": "Carpal Tunnel Syndrome",
+    "symptoms": [
+      "Wrist pain",
+      "Hand numbness",
+      "Weak grip"
+    ],
+    "pain_duration_weeks": 9,
+    "pain_score": 5,
+    "physical_therapy_sessions": 4,
+    "specialist_referral": false,
+    "medications": [
+      "Ibuprofen"
+    ],
+    "requested_procedure": "Nerve Conduction Study"
+  },
+  {
+    "patient_id": "P007",
+    "name": "Michael Brown",
+    "age": 67,
+    "gender": "Male",
+    "insurance": "Medicare Advantage",
+    "diagnosis": "Spinal Stenosis",
+    "symptoms": [
+      "Leg pain when walking",
+      "Lower back stiffness"
+    ],
+    "pain_duration_weeks": 30,
+    "pain_score": 8,
+    "physical_therapy_sessions": 15,
+    "specialist_referral": true,
+    "medications": [
+      "Gabapentin",
+      "Tramadol"
+    ],
+    "requested_procedure": "MRI Lumbar Spine"
+  },
+  {
+    "patient_id": "P008",
+    "name": "Sarah Johnson",
+    "age": 33,
+    "gender": "Female",
+    "insurance": "UnitedHealthcare",
+    "diagnosis": "Meniscus Tear",
+    "symptoms": [
+      "Knee locking",
+      "Swelling",
+      "Pain on twisting"
+    ],
+    "pain_duration_weeks": 5,
+    "pain_score": 6,
+    "physical_therapy_sessions": 2,
+    "specialist_referral": false,
+    "medications": [
+      "Naproxen"
+    ],
+    "requested_procedure": "MRI Knee"
+  },
+  {
+    "patient_id": "P009",
+    "name": "David Lee",
+    "age": 48,
+    "gender": "Male",
+    "insurance": "Cigna",
+    "diagnosis": "Chronic Lower Back Pain",
+    "symptoms": [
+      "Back pain",
+      "Muscle spasms"
+    ],
+    "pain_duration_weeks": 20,
+    "pain_score": 7,
+    "physical_therapy_sessions": 9,
+    "specialist_referral": true,
+    "medications": [
+      "Ibuprofen",
+      "Baclofen"
+    ],
+    "requested_procedure": "MRI Lumbar Spine"
+  },
+  {
+    "patient_id": "P010",
+    "name": "Jennifer Taylor",
+    "age": 41,
+    "gender": "Female",
+    "insurance": "Blue Shield",
+    "diagnosis": "Herniated Disc C5-C6",
+    "symptoms": [
+      "Neck pain",
+      "Radiating arm pain"
+    ],
+    "pain_duration_weeks": 11,
+    "pain_score": 8,
+    "physical_therapy_sessions": 6,
+    "specialist_referral": true,
+    "medications": [
+      "Gabapentin",
+      "Prednisone"
+    ],
+    "requested_procedure": "MRI Cervical Spine"
+  },
+  {
+    "patient_id": "P011",
+    "name": "William Anderson",
+    "age": 58,
+    "gender": "Male",
+    "insurance": "Aetna",
+    "diagnosis": "Degenerative Disc Disease",
+    "symptoms": [
+      "Chronic back pain",
+      "Reduced mobility"
+    ],
+    "pain_duration_weeks": 40,
+    "pain_score": 6,
+    "physical_therapy_sessions": 14,
+    "specialist_referral": true,
+    "medications": [
+      "Meloxicam",
+      "Duloxetine"
+    ],
+    "requested_procedure": "MRI Lumbar Spine"
+  },
+  {
+    "patient_id": "P012",
+    "name": "Patricia Thomas",
+    "age": 36,
+    "gender": "Female",
+    "insurance": "Cigna",
+    "diagnosis": "Ankle Sprain Grade 2",
+    "symptoms": [
+      "Ankle swelling",
+      "Pain on weight bearing"
+    ],
+    "pain_duration_weeks": 3,
+    "pain_score": 5,
+    "physical_therapy_sessions": 1,
+    "specialist_referral": false,
+    "medications": [
+      "Ibuprofen"
+    ],
+    "requested_procedure": "MRI Ankle"
+  },
+  {
+    "patient_id": "P013",
+    "name": "Charles Jackson",
+    "age": 63,
+    "gender": "Male",
+    "insurance": "Medicare Advantage",
+    "diagnosis": "Hip Osteoarthritis",
+    "symptoms": [
+      "Hip pain",
+      "Stiffness",
+      "Limping"
+    ],
+    "pain_duration_weeks": 24,
+    "pain_score": 7,
+    "physical_therapy_sessions": 10,
+    "specialist_referral": true,
+    "medications": [
+      "Acetaminophen",
+      "Celecoxib"
+    ],
+    "requested_procedure": "Total Hip Replacement"
+  },
+  {
+    "patient_id": "P014",
+    "name": "Barbara White",
+    "age": 27,
+    "gender": "Female",
+    "insurance": "UnitedHealthcare",
+    "diagnosis": "Tension Headache",
+    "symptoms": [
+      "Head pressure",
+      "Neck tightness"
+    ],
+    "pain_duration_weeks": 2,
+    "pain_score": 4,
+    "physical_therapy_sessions": 0,
+    "specialist_referral": false,
+    "medications": [
+      "Acetaminophen"
+    ],
+    "requested_procedure": "MRI Brain"
+  },
+  {
+    "patient_id": "P015",
+    "name": "Christopher Harris",
+    "age": 50,
+    "gender": "Male",
+    "insurance": "Blue Shield",
+    "diagnosis": "Lumbar Radiculopathy",
+    "symptoms": [
+      "Sciatica",
+      "Leg weakness"
+    ],
+    "pain_duration_weeks": 16,
+    "pain_score": 8,
+    "physical_therapy_sessions": 8,
+    "specialist_referral": true,
+    "medications": [
+      "Gabapentin",
+      "Naproxen"
+    ],
+    "requested_procedure": "MRI Lumbar Spine"
+  },
+  {
+    "patient_id": "P016",
+    "name": "Susan Martin",
+    "age": 44,
+    "gender": "Female",
+    "insurance": "Aetna",
+    "diagnosis": "Frozen Shoulder",
+    "symptoms": [
+      "Shoulder stiffness",
+      "Pain at night"
+    ],
+    "pain_duration_weeks": 18,
+    "pain_score": 6,
+    "physical_therapy_sessions": 11,
+    "specialist_referral": true,
+    "medications": [
+      "Ibuprofen",
+      "Prednisone"
+    ],
+    "requested_procedure": "MRI Shoulder"
+  },
+  {
+    "patient_id": "P017",
+    "name": "Daniel Thompson",
+    "age": 35,
+    "gender": "Male",
+    "insurance": "Cigna",
+    "diagnosis": "Acute Lower Back Strain",
+    "symptoms": [
+      "Back pain",
+      "Muscle tightness"
+    ],
+    "pain_duration_weeks": 2,
+    "pain_score": 5,
+    "physical_therapy_sessions": 0,
+    "specialist_referral": false,
+    "medications": [
+      "Ibuprofen"
+    ],
+    "requested_procedure": "MRI Lumbar Spine"
+  },
+  {
+    "patient_id": "P018",
+    "name": "Nancy Garcia",
+    "age": 59,
+    "gender": "Female",
+    "insurance": "Medicare Advantage",
+    "diagnosis": "Spinal Stenosis",
+    "symptoms": [
+      "Leg numbness",
+      "Difficulty standing long periods"
+    ],
+    "pain_duration_weeks": 22,
+    "pain_score": 7,
+    "physical_therapy_sessions": 9,
+    "specialist_referral": true,
+    "medications": [
+      "Gabapentin",
+      "Meloxicam"
+    ],
+    "requested_procedure": "MRI Lumbar Spine"
+  },
+  {
+    "patient_id": "P019",
+    "name": "Matthew Robinson",
+    "age": 31,
+    "gender": "Male",
+    "insurance": "UnitedHealthcare",
+    "diagnosis": "ACL Tear",
+    "symptoms": [
+      "Knee instability",
+      "Swelling"
+    ],
+    "pain_duration_weeks": 4,
+    "pain_score": 7,
+    "physical_therapy_sessions": 2,
+    "specialist_referral": true,
+    "medications": [
+      "Naproxen"
+    ],
+    "requested_procedure": "MRI Knee"
+  },
+  {
+    "patient_id": "P020",
+    "name": "Karen Clark",
+    "age": 47,
+    "gender": "Female",
+    "insurance": "Blue Shield",
+    "diagnosis": "Fibromyalgia",
+    "symptoms": [
+      "Widespread pain",
+      "Fatigue",
+      "Sleep issues"
+    ],
+    "pain_duration_weeks": 52,
+    "pain_score": 6,
+    "physical_therapy_sessions": 6,
+    "specialist_referral": true,
+    "medications": [
+      "Duloxetine",
+      "Pregabalin"
+    ],
+    "requested_procedure": "MRI Whole Spine"
+  },
+  {
+    "patient_id": "P021",
+    "name": "Anthony Rodriguez",
+    "age": 54,
+    "gender": "Male",
+    "insurance": "Aetna",
+    "diagnosis": "Lumbar Disc Herniation",
+    "symptoms": [
+      "Back pain",
+      "Sciatica",
+      "Foot drop"
+    ],
+    "pain_duration_weeks": 13,
+    "pain_score": 9,
+    "physical_therapy_sessions": 7,
+    "specialist_referral": true,
+    "medications": [
+      "Gabapentin",
+      "Tramadol"
+    ],
+    "requested_procedure": "MRI Lumbar Spine"
+  },
+  {
+    "patient_id": "P022",
+    "name": "Lisa Lewis",
+    "age": 39,
+    "gender": "Female",
+    "insurance": "Cigna",
+    "diagnosis": "Plantar Fasciitis",
+    "symptoms": [
+      "Heel pain",
+      "Pain first steps in morning"
+    ],
+    "pain_duration_weeks": 8,
+    "pain_score": 5,
+    "physical_therapy_sessions": 5,
+    "specialist_referral": false,
+    "medications": [
+      "Ibuprofen"
+    ],
+    "requested_procedure": "MRI Foot"
+  },
+  {
+    "patient_id": "P023",
+    "name": "Mark Walker",
+    "age": 42,
+    "gender": "Male",
+    "insurance": "UnitedHealthcare",
+    "diagnosis": "Cervical Disc Herniation",
+    "symptoms": [
+      "Neck pain",
+      "Arm numbness"
+    ],
+    "pain_duration_weeks": 10,
+    "pain_score": 7,
+    "physical_therapy_sessions": 7,
+    "specialist_referral": true,
+    "medications": [
+      "Gabapentin",
+      "Ibuprofen"
+    ],
+    "requested_procedure": "MRI Cervical Spine"
+  },
+  {
+    "patient_id": "P024",
+    "name": "Betty Hall",
+    "age": 66,
+    "gender": "Female",
+    "insurance": "Medicare Advantage",
+    "diagnosis": "Knee Osteoarthritis",
+    "symptoms": [
+      "Knee pain",
+      "Reduced mobility"
+    ],
+    "pain_duration_weeks": 35,
+    "pain_score": 7,
+    "physical_therapy_sessions": 13,
+    "specialist_referral": true,
+    "medications": [
+      "Acetaminophen",
+      "Celecoxib"
+    ],
+    "requested_procedure": "Total Knee Replacement"
+  },
+  {
+    "patient_id": "P025",
+    "name": "Steven Allen",
+    "age": 28,
+    "gender": "Male",
+    "insurance": "Blue Shield",
+    "diagnosis": "Mild Concussion",
+    "symptoms": [
+      "Headache",
+      "Dizziness",
+      "Confusion"
+    ],
+    "pain_duration_weeks": 1,
+    "pain_score": 4,
+    "physical_therapy_sessions": 0,
+    "specialist_referral": false,
+    "medications": [
+      "Acetaminophen"
+    ],
+    "requested_procedure": "CT Brain"
+  },
+  {
+    "patient_id": "P026",
+    "name": "Dorothy Young",
+    "age": 51,
+    "gender": "Female",
+    "insurance": "Aetna",
+    "diagnosis": "Lumbar Spondylolisthesis",
+    "symptoms": [
+      "Back pain",
+      "Leg pain on standing"
+    ],
+    "pain_duration_weeks": 28,
+    "pain_score": 8,
+    "physical_therapy_sessions": 10,
+    "specialist_referral": true,
+    "medications": [
+      "Gabapentin",
+      "Naproxen"
+    ],
+    "requested_procedure": "MRI Lumbar Spine"
+  },
+  {
+    "patient_id": "P027",
+    "name": "Paul King",
+    "age": 60,
+    "gender": "Male",
+    "insurance": "Cigna",
+    "diagnosis": "Rotator Cuff Tear",
+    "symptoms": [
+      "Shoulder weakness",
+      "Pain with overhead motion"
+    ],
+    "pain_duration_weeks": 15,
+    "pain_score": 6,
+    "physical_therapy_sessions": 9,
+    "specialist_referral": true,
+    "medications": [
+      "Naproxen",
+      "Meloxicam"
+    ],
+    "requested_procedure": "MRI Shoulder"
+  },
+  {
+    "patient_id": "P028",
+    "name": "Sandra Wright",
+    "age": 34,
+    "gender": "Female",
+    "insurance": "UnitedHealthcare",
+    "diagnosis": "Sciatica",
+    "symptoms": [
+      "Radiating leg pain",
+      "Lower back pain"
+    ],
+    "pain_duration_weeks": 7,
+    "pain_score": 6,
+    "physical_therapy_sessions": 3,
+    "specialist_referral": false,
+    "medications": [
+      "Ibuprofen",
+      "Gabapentin"
+    ],
+    "requested_procedure": "MRI Lumbar Spine"
+  },
+  {
+    "patient_id": "P029",
+    "name": "Kevin Scott",
+    "age": 46,
+    "gender": "Male",
+    "insurance": "Blue Shield",
+    "diagnosis": "Chronic Neck Pain",
+    "symptoms": [
+      "Neck stiffness",
+      "Headaches"
+    ],
+    "pain_duration_weeks": 19,
+    "pain_score": 6,
+    "physical_therapy_sessions": 8,
+    "specialist_referral": true,
+    "medications": [
+      "Cyclobenzaprine",
+      "Ibuprofen"
+    ],
+    "requested_procedure": "MRI Cervical Spine"
+  },
+  {
+    "patient_id": "P030",
+    "name": "Donna Green",
+    "age": 57,
+    "gender": "Female",
+    "insurance": "Medicare Advantage",
+    "diagnosis": "Lumbar Stenosis",
+    "symptoms": [
+      "Leg pain when walking",
+      "Numbness"
+    ],
+    "pain_duration_weeks": 33,
+    "pain_score": 7,
+    "physical_therapy_sessions": 12,
+    "specialist_referral": true,
+    "medications": [
+      "Gabapentin",
+      "Meloxicam"
+    ],
+    "requested_procedure": "MRI Lumbar Spine"
+  }
+]

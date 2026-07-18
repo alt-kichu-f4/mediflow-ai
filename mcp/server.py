@@ -35,5 +35,5 @@ def authorization_letter(patient_id: str):
 
 @mcp.tool()
 def authorization_history(patient_id: str):
-    """Retrieve previous authorization decisions."""
+    """Retrieve previous authorization decisions   ."""
     return get_authorization_history(patient_id)

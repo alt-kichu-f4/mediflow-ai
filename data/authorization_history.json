@@ -1,0 +1,182 @@
+[
+  {
+    "patient_id": "P001",
+    "status": "Approved",
+    "date": "2026-07-18",
+    "reason": "Met all criteria"
+  },
+  {
+    "patient_id": "P002",
+    "status": "Denied",
+    "date": "2026-07-18",
+    "reason": "Insufficient PT sessions (3/6 required)"
+  },
+  {
+    "patient_id": "P003",
+    "status": "Approved",
+    "date": "2026-07-18",
+    "reason": "Met all criteria"
+  },
+  {
+    "patient_id": "P004",
+    "status": "Approved",
+    "date": "2026-07-18",
+    "reason": "Met all criteria"
+  },
+  {
+    "patient_id": "P005",
+    "status": "Approved",
+    "date": "2026-07-18",
+    "reason": "Met all criteria"
+  },
+  {
+    "patient_id": "P006",
+    "status": "Approved",
+    "date": "2026-07-18",
+    "reason": "Met all criteria"
+  },
+  {
+    "patient_id": "P007",
+    "status": "Approved",
+    "date": "2026-07-18",
+    "reason": "Met all criteria"
+  },
+  {
+    "patient_id": "P008",
+    "status": "Denied",
+    "date": "2026-07-18",
+    "reason": "Insufficient PT sessions (2/4 required)"
+  },
+  {
+    "patient_id": "P009",
+    "status": "Approved",
+    "date": "2026-07-18",
+    "reason": "Met all criteria"
+  },
+  {
+    "patient_id": "P010",
+    "status": "Approved",
+    "date": "2026-07-18",
+    "reason": "Met all criteria"
+  },
+  {
+    "patient_id": "P011",
+    "status": "Approved",
+    "date": "2026-07-18",
+    "reason": "Met all criteria"
+  },
+  {
+    "patient_id": "P012",
+    "status": "Denied",
+    "date": "2026-07-18",
+    "reason": "Insufficient PT sessions (1/4 required); Pain duration too short (3/4 weeks required)"
+  },
+  {
+    "patient_id": "P013",
+    "status": "Approved",
+    "date": "2026-07-18",
+    "reason": "Met all criteria"
+  },
+  {
+    "patient_id": "P014",
+    "status": "Pending",
+    "date": "2026-07-18",
+    "reason": "No matching policy on file for this provider/procedure"
+  },
+  {
+    "patient_id": "P015",
+    "status": "Approved",
+    "date": "2026-07-18",
+    "reason": "Met all criteria"
+  },
+  {
+    "patient_id": "P016",
+    "status": "Approved",
+    "date": "2026-07-18",
+    "reason": "Met all criteria"
+  },
+  {
+    "patient_id": "P017",
+    "status": "Denied",
+    "date": "2026-07-18",
+    "reason": "Insufficient PT sessions (0/6 required); Pain duration too short (2/6 weeks required); Missing specialist referral"
+  },
+  {
+    "patient_id": "P018",
+    "status": "Approved",
+    "date": "2026-07-18",
+    "reason": "Met all criteria"
+  },
+  {
+    "patient_id": "P019",
+    "status": "Denied",
+    "date": "2026-07-18",
+    "reason": "Insufficient PT sessions (2/4 required)"
+  },
+  {
+    "patient_id": "P020",
+    "status": "Approved",
+    "date": "2026-07-18",
+    "reason": "Met all criteria"
+  },
+  {
+    "patient_id": "P021",
+    "status": "Approved",
+    "date": "2026-07-18",
+    "reason": "Met all criteria"
+  },
+  {
+    "patient_id": "P022",
+    "status": "Approved",
+    "date": "2026-07-18",
+    "reason": "Met all criteria"
+  },
+  {
+    "patient_id": "P023",
+    "status": "Approved",
+    "date": "2026-07-18",
+    "reason": "Met all criteria"
+  },
+  {
+    "patient_id": "P024",
+    "status": "Approved",
+    "date": "2026-07-18",
+    "reason": "Met all criteria"
+  },
+  {
+    "patient_id": "P025",
+    "status": "Pending",
+    "date": "2026-07-18",
+    "reason": "No matching policy on file for this provider/procedure"
+  },
+  {
+    "patient_id": "P026",
+    "status": "Approved",
+    "date": "2026-07-18",
+    "reason": "Met all criteria"
+  },
+  {
+    "patient_id": "P027",
+    "status": "Approved",
+    "date": "2026-07-18",
+    "reason": "Met all criteria"
+  },
+  {
+    "patient_id": "P028",
+    "status": "Denied",
+    "date": "2026-07-18",
+    "reason": "Insufficient PT sessions (3/6 required); Missing specialist referral"
+  },
+  {
+    "patient_id": "P029",
+    "status": "Approved",
+    "date": "2026-07-18",
+    "reason": "Met all criteria"
+  },
+  {
+    "patient_id": "P030",
+    "status": "Approved",
+    "date": "2026-07-18",
+    "reason": "Met all criteria"
+  }
+]
